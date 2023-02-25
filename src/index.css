@@ -1,3 +1,32 @@
 body {
   margin: 0;
+  font-family: 'Roboto Slab', serif;
+}
+.page{
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgb(33, 33, 33); */
+  background-image: url("../public/images/philipp-pilz-AOhBMkQlzgM-unsplash.jpg");
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.start{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title{
+  color: white;
+  font-size: 4.5rem;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+.start-button{
+  width: 12rem;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.5rem;  
 }
