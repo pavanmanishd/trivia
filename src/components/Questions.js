@@ -6,7 +6,7 @@ export default function Questions() {
     const [checkAnswers, setCheckAnswers] = React.useState(false)
     const [allQuestions, setAllQuestions] = React.useState([])
     const [highScore, setHighScore] = React.useState(
-        () => JSON.parse(localStorage.getItem("highScore")) || 0
+        () => JSON.parse(localStorage.getItem("TriviahighScore")) || 0
     )
 
     React.useEffect(() => {
@@ -66,7 +66,7 @@ export default function Questions() {
 
     React.useEffect(() => {
         if (checkAnswers && highScore < score) {
-            localStorage.setItem("highScore", JSON.stringify(score))
+            localStorage.setItem("TriviahighScore", JSON.stringify(score))
             setHighScore(score)
             //   setScore(0)
         }
