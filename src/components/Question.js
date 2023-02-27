@@ -2,7 +2,6 @@ import Parser from "html-react-parser"
 import React from "react"
 
 export default function Question(props) {
-    // console.log(props.options)
 
     const [selected, setSelected] = React.useState("")
     

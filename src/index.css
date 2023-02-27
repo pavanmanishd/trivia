@@ -239,3 +239,22 @@ main {
     z-index: 0;
   }
 }
+
+
+input{
+  margin: 50px 10px;
+  width: 200px;
+  padding-left: 20px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Merriweather";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

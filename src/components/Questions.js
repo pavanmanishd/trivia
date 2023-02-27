@@ -2,7 +2,7 @@ import React from "react"
 import { nanoid } from "nanoid"
 import Question from "./Question"
 import Parser from "html-react-parser"
-export default function Questions() {
+export default function Questions(props) {
     const [checkAnswers, setCheckAnswers] = React.useState(false)
     const [allQuestions, setAllQuestions] = React.useState([])
     const [highScore, setHighScore] = React.useState(
@@ -13,10 +13,9 @@ export default function Questions() {
     const [score, setScore] = React.useState(0)
     const [answers, setAnswers] = React.useState()
     const [showOptions, setShowOptions] = React.useState(false)
-    console.log(finalOptions)
 
     React.useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=5&category=18&type=multiple")
+        fetch(`https://opentdb.com/api.php?amount=${props.num}&category=18&type=multiple`)
             .then(res => res.json())
             .then(data => setAllQuestions(data.results))
     }, [])
@@ -58,8 +57,9 @@ export default function Questions() {
     const sorter = (a, b) => a.qNo > b.qNo ? 1 : -1;
     function calcScore() {
         finalOptions.map(option => {
-            if (option.choosen == option.correct) {
-                setScore(prevScore => prevScore + 1)
+            if(option.choosen == ""){}
+            else if(option.choosen == option.correct) {
+                setScore(prevScore => {return prevScore + 1})
             }
         })
         setCheckAnswers(true)
@@ -124,7 +124,7 @@ export default function Questions() {
                 <button className="button" onClick={restart}>Restart</button>
                 {showOptions && answers}
             </div>}
-            {!checkAnswers && (allQuestions.length === 5 ?
+            {!checkAnswers && (allQuestions.length == props.num ?
                 <div className="questions-page">
                     {questions}
                     <button className="button checkAns" onClick={calcScore}>Check Answers</button>
