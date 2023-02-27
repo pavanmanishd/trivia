@@ -124,7 +124,7 @@ export default function Questions() {
                 <button className="button" onClick={restart}>Restart</button>
                 {showOptions && answers}
             </div>}
-            {!checkAnswers && allQuestions.length === 5 ?
+            {!checkAnswers && (allQuestions.length === 5 ?
                 <div className="questions-page">
                     {questions}
                     <button className="button checkAns" onClick={calcScore}>Check Answers</button>
@@ -135,7 +135,7 @@ export default function Questions() {
                             <div class="pl pl-leapfrog"></div>
                         </div>
                     </main>
-                )}
+                ))}
         </div >
     )
 
