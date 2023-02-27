@@ -24,7 +24,7 @@ export default function Questions() {
     function select(val) {
         setFinalOptions(prevState => {
             const s = prevState.filter(item => item.question !== val.question)
-            s.push(val)            
+            s.push(val)
             return s
         })
     }
@@ -53,7 +53,7 @@ export default function Questions() {
     }, [allQuestions])
 
     // React.useEffect(() => {
-        
+
     // }, [checkAnswers])
     const sorter = (a, b) => a.qNo > b.qNo ? 1 : -1;
     function calcScore() {
@@ -68,10 +68,10 @@ export default function Questions() {
             a.sort(sorter)
             return a
         })
-        
+
     }
 
-    function checkOptions(){
+    function checkOptions() {
         setShowOptions(prevState => !prevState)
         setAnswers(finalOptions.map(item => {
             return (
@@ -88,17 +88,17 @@ export default function Questions() {
         }))
     }
 
-    React.useEffect(()=>{
-        finalOptions.map(item => {    
-            if(item.choosen !== ""){
-                document.getElementById(`${item.id+item.correct}0`).classList.add("correct")
-                document.getElementById(`${item.id+item.choosen}0`).classList.add("choosen")
-            }                
-            else{
-                document.getElementById(`${item.id+item.correct}0`).classList.add("correct-notchoosen")
+    React.useEffect(() => {
+        finalOptions.map(item => {
+            if (item.choosen !== "") {
+                document.getElementById(`${item.id + item.correct}0`).classList.add("correct")
+                document.getElementById(`${item.id + item.choosen}0`).classList.add("choosen")
             }
-    })
-    },[answers])
+            else {
+                document.getElementById(`${item.id + item.correct}0`).classList.add("correct-notchoosen")
+            }
+        })
+    }, [answers])
 
 
     function restart() {
@@ -124,11 +124,19 @@ export default function Questions() {
                 <button className="button" onClick={restart}>Restart</button>
                 {showOptions && answers}
             </div>}
-            {!checkAnswers && <div className="questions-page">
-                {questions}
-                <button className="button checkAns" onClick={calcScore}>Check Answers</button>
-            </div>}
-        </div>
+            {!checkAnswers && allQuestions.length === 5 ?
+                <div className="questions-page">
+                    {questions}
+                    <button className="button checkAns" onClick={calcScore}>Check Answers</button>
+                </div> :
+                (
+                    < main >
+                        <div class="cell">
+                            <div class="pl pl-leapfrog"></div>
+                        </div>
+                    </main>
+                )}
+        </div >
     )
 
 }
