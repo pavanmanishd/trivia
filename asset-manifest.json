@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/trivia/static/css/main.79656578.css",
-    "main.js": "/trivia/static/js/main.deb71efb.js",
+    "main.js": "/trivia/static/js/main.b64f4dbf.js",
     "index.html": "/trivia/index.html",
     "main.79656578.css.map": "/trivia/static/css/main.79656578.css.map",
-    "main.deb71efb.js.map": "/trivia/static/js/main.deb71efb.js.map"
+    "main.b64f4dbf.js.map": "/trivia/static/js/main.b64f4dbf.js.map"
   },
   "entrypoints": [
     "static/css/main.79656578.css",
-    "static/js/main.deb71efb.js"
+    "static/js/main.b64f4dbf.js"
   ]
 }
