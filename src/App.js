@@ -3,13 +3,13 @@ import Start from "./components/Start";
 import Questions from "./components/Questions";
 
 function App() {
-  
+
   const [play, setPlay] = React.useState(false)
 
-  function start(){
+  function start() {
     setPlay(prevPlay => !prevPlay)
-  }  
-  
+  }
+
   return (
     <div className="page">
       {!play && <Start start={start} />}
