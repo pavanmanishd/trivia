@@ -62,10 +62,10 @@ export default function Question(props) {
         <div className="question">
             <p className="q">{props.questionNo}. {Parser(props.item.question)}</p>
             <div className="options">
-                <button id={props.id + "0"} onClick={() => handleClick(props.id + "0")} className="button" >a).{Parser(props.options[0])}</button>
-                <button id={props.id + "1"} onClick={() => handleClick(props.id + "1")} className="button" >b).{Parser(props.options[1])}</button>
-                <button id={props.id + "2"} onClick={() => handleClick(props.id + "2")} className="button" >c).{Parser(props.options[2])}</button>
-                <button id={props.id + "3"} onClick={() => handleClick(props.id + "3")} className="button" >d).{Parser(props.options[3])}</button>
+                <button id={props.id + "0"} onClick={() => handleClick(props.id + "0")} className="button" >a) {Parser(props.options[0])}</button>
+                <button id={props.id + "1"} onClick={() => handleClick(props.id + "1")} className="button" >b) {Parser(props.options[1])}</button>
+                <button id={props.id + "2"} onClick={() => handleClick(props.id + "2")} className="button" >c) {Parser(props.options[2])}</button>
+                <button id={props.id + "3"} onClick={() => handleClick(props.id + "3")} className="button" >d) {Parser(props.options[3])}</button>
             </div>
         </div>
     )
