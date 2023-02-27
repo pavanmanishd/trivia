@@ -10,16 +10,18 @@ export default function Start(props) {
         <div className="start">
             <h1 className="title">Quizzical</h1>
             <form action="">
-                <label htmlFor="number">Number of Questions (Default : 5) : </label>
-                <input
-                    type="number"
-                    id="number" 
-                    onChange={handleChange}
-                    name="number"
-                    value={number}
-                />
+                <div>
+                    <label htmlFor="number">Number of Questions (Default : 5) : </label>
+                    <input
+                        type="number"
+                        id="number"
+                        onChange={handleChange}
+                        name="number"
+                        value={number}
+                    />
+                </div>
+                <button className="button" id="start-quiz" onClick={props.start}>Start quiz</button>
             </form>
-            <button className="button" onClick={props.start}>Start quiz</button>
         </div>
     )
 }
