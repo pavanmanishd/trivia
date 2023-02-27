@@ -61,7 +61,6 @@ export default function Questions() {
             if (option.choosen == option.correct) {
                 setScore(prevScore => prevScore + 1)
             }
-            return option
         })
         setCheckAnswers(true)
         setFinalOptions(prevState => {
