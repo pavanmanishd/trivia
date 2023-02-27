@@ -62,7 +62,7 @@ hr {
 }
 .score-page {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,4 +124,14 @@ hr {
 .selected{
   color: #ffffff;
   background-color: #000000;
+}
+
+.choosen{
+  background-color: red;
+}
+.correct{
+  background-color: green;
+}
+.correct-notchoosen{
+  background-color: grey;
 }

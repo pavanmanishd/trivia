@@ -3,16 +3,32 @@ import React from "react"
 
 export default function Question(props) {
     // console.log(props.options)
+
     const [selected, setSelected] = React.useState("")
+    
+    React.useEffect(()=>{
+        props.selected_option({
+            id : props.id,
+            qNo : props.questionNo,
+            question: props.item.question,
+            correct: props.answer_index,
+            choosen: "",
+            options: props.options
+        })
+    },[])
+
     function handleClick(id) {
         const element = document.getElementById(id)
         if (selected === "") {
             element.classList.add("selected")
             setSelected(id)
             props.selected_option({
+                id : id,
+                qNo : props.questionNo,
                 question: props.item.question,
                 correct: props.answer_index,
-                choosen: id.slice(-1)
+                choosen: id.slice(-1),
+                options: props.options
             })
         }
         // element.classList.add("selected")
@@ -20,9 +36,12 @@ export default function Question(props) {
             element.classList.remove("selected")
             setSelected("")
             props.selected_option({
+                id : id,
+                qNo : props.questionNo,
                 question: props.item.question,
                 correct: props.answer_index,
-                choosen: ""
+                choosen: "",
+                options: props.options
             })
         }
         else {
@@ -30,9 +49,12 @@ export default function Question(props) {
             element.classList.add("selected")
             setSelected(id)
             props.selected_option({
+                id : id,
+                qNo : props.questionNo,
                 question: props.item.question,
                 correct: props.answer_index,
-                choosen: id.slice(-1)
+                choosen: id.slice(-1),
+                options: props.options
             })
         }
     }
