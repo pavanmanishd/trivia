@@ -78,10 +78,10 @@ export default function Questions(props) {
                 <div>
                     <p className="q" >{item.qNo}. {Parser(item.question)}</p>
                     <div className="options">
-                        <div id={`${item.id}00`} className="button"  >a).{Parser(item.options[0])}</div>
-                        <div id={`${item.id}10`} className="button"  >b).{Parser(item.options[1])}</div>
-                        <div id={`${item.id}20`} className="button"  >c).{Parser(item.options[2])}</div>
-                        <div id={`${item.id}30`} className="button"  >d).{Parser(item.options[3])}</div>
+                        <div id={`${item.id}00`} className="button"  >a) {Parser(item.options[0])}</div>
+                        <div id={`${item.id}10`} className="button"  >b) {Parser(item.options[1])}</div>
+                        <div id={`${item.id}20`} className="button"  >c) {Parser(item.options[2])}</div>
+                        <div id={`${item.id}30`} className="button"  >d) {Parser(item.options[3])}</div>
                     </div>
                 </div>
             )
